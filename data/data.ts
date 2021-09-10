@@ -9,7 +9,7 @@ const data = [
         //not required data
         tags: ["Animales", "Perritos", "Adopcion"],
         description: "Net for animal rescue",
-        buttonsTemplate: [{id:1,name:"repartidor",type:"offer",, fields:[geoCode:"posicion boton", , ]},{id:2,name:"restaurante",type:"need",, fields:[geoCode:"posicion boton", , ]}], //array of objects, each type has an int, a name and a color associated. Default are offer (green), need (red).
+        buttonsTemplate: [{id:1,name:"repartidor",type:"offer", fields:[geoCode:"posicion boton", , ]},{id:2,name:"restaurante",type:"need",, fields:[geoCode:"posicion boton", , ]}], //array of objects, each type has an int, a name and a color associated. Default are offer (green), need (red).
         //data for GIS
         showButtons : "area", //enum {area, point} show buttons by area not showing exact position on map
         location: "Livorno, Italia",
@@ -23,6 +23,7 @@ const data = [
 
         buttons: [
             {   //required data
+                type: 1,
                 templateId: 1,
                 tags: ["tag1", "tag2", "tag3"],
                 //required data
@@ -38,13 +39,14 @@ const data = [
             },
             {
                 type: 1,
+                templateId: 1,
                 tags: ["tag1", "tag2", "tag3"],
                 date: ["1/08/2021"],
                 location: ["Livorno, Italia"],
                 longitude: [43.2333],
                 latitude: [21.0002],
                 networks: [13,24],
-                isGroup: true,
+                chatType: "single", //enum {single,group} chat structure
                 templateExtraData: {}, //JSON template contains info about the image and the description (standard) and also about booleans, checklist and every other field related to the network module
             },
         ]
